@@ -1,0 +1,16 @@
+<div class="sign-in-box">
+  <div id="sign-in-background"></div>
+  <h1 class="white-text text-center">Sign In</h1>
+  <form method="POST" action="/sign-in">
+    <div class="form-group">
+      <label  for="email">Email address</label>
+      <input type="email" name="user[email]" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label  for="password">Password</label>
+      <input type="password" name="user[password]" class="form-control" id="password" placeholder="Password">
+    </div>
+    <button id="sign-in-button" type="submit" class="btn">Sign In</button>
+  </form>
+  <a class="black-text" href="/sign-up">Create an Account</a>
+</div>
