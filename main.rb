@@ -5,6 +5,9 @@ require './models'
 set :database, 'sqlite3:blog.sqlite3'
 
 get '/' do
-  erb :home
+  erb :sign_in, :layout => :layout_login
 end
   
+get '/sign-up' do
+	erb :sign_up, :layout => :layout_login
+end
