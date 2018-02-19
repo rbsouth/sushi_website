@@ -9,6 +9,19 @@ get '/' do
   erb :sign_in, :layout => :layout_login
 end
 
+post '/sign-in' do
+	email = params[:user][:email]
+	password = params[:user][:password]
+	@user = User.where(email: email).first
+	if @user && @user.password == password
+		session[:user_id] = @user.id
+		redirect "/yay"
+		# redirect "/profile/#{@user.id}"
+	else
+		redirect "/"
+	end
+end
+
 post '/new-user' do
 	puts "------------PARAMS--------------"
 	p params
