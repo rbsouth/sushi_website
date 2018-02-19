@@ -9,5 +9,5 @@ get '/' do
 end
   
 get '/home' do
-	erb :home
+  erb :home
 end
