@@ -1,0 +1,13 @@
+@yoda = User.create(email: "yo@yosif.com", username: "YodaAllTheWay", first_name: "Yoda", last_name: "Greenman", password: "password", phone: "234-567-8900")
+@leia = User.create(email: "general@rebel.com", username: "NotYourPrincess", first_name: "Leia", last_name: "Organa", password: "password", phone: "")
+
+@leia.posts.create(created_at: Time.now, content: "This is fantastic! I don't know wether to eat it or take pictures. So, I'll do both! Happy tummy, yum!", picture: "/images/mosaic-sushi.jpg")
+@yoda.posts.create(created_at: Time.now, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quae architecto molestiae voluptatum reprehenderit libero?", picture: "/images/mosaic-sushi.jpg")
+@leia.posts.create(created_at: Time.now, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.", picture: "/images/mosaic-sushi.jpg")
+@yoda.posts.create(created_at: Time.now, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.", picture: "/images/mosaic-sushi.jpg")
+@leia.posts.create(created_at: Time.now, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et quasi natus neque dolore maiores qui praesentium ullam laborum?", picture: "/images/mosaic-sushi.jpg")
+@yoda.posts.create(created_at: Time.now, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit repellat, quae tempora dignissimos maxime quam ex pariatur aperiam ab!", picture: "/images/mosaic-sushi.jpg")
+@leia.posts.create(created_at: Time.now, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit repellat, quae tempora dignissimos maxime quam ex pariatur aperiam ab!", picture: "/images/mosaic-sushi.jpg")
+@leia.posts.create(created_at: Time.now, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit repellat, quae tempora dignissimos maxime quam ex pariatur aperiam abieb aija.", picture: "/images/mosaic-sushi.jpg")
+@yoda.posts.create(created_at: Time.now, content: "Lorem ipsum dolor sit kjado aoeua euab ebobg amet, consectetur adipisicing elit. Odit repellat, quae tempora dignissimos maxime quam ex pariatur aperiam ab!", picture: "/images/mosaic-sushi.jpg")
+@leia.posts.create(created_at: Time.now, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit repellat, quae tempora dignissimos maxim!", picture: "/images/mosaic-sushi.jpg")
