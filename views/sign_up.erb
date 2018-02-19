@@ -1,0 +1,42 @@
+  <link rel="stylesheet" href="css/sign_up.css">
+  <title>Hello, world!</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img id="big-logo" src="/images/sushi-logo-white.png" alt="">
+      </div>
+      <div class="col">
+        <div class="sign-in-box">
+          <div id="sign-in-background"></div>
+          <h1 class="white-text text-center ahead-of-background">Sign up</h1>
+          <form method="POST" action="/new-user">
+            <div class="form-group ahead-of-background">
+              <label  for="email">Email address</label>
+              <input type="email" name="user[email]" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" name="user[username]" class="form-control" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="first_name">First Name</label>
+              <input type="text" name="user[first_name]" class="form-control" id="first_name" placeholder="First name">
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last Name</label>
+              <input type="text" name="user[last_name]" class="form-control" id="last_name" placeholder="Last name">
+            </div>
+            <div class="form-group">
+              <label  for="password">Password</label>
+              <input type="password" name="user[password]" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button id="sign-in-button" type="submit" class="btn">Create Account</button>
+          </form>
+          <a class="black-text" href="/">Already Have an Account</a>
+        </div>
+      </div>
+    </div>
+  </div>

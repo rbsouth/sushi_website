@@ -9,5 +9,13 @@ get '/' do
 end
   
 get '/home' do
-  erb :home
+	erb :home
+end
+
+get '/sign-in' do 
+  erb :sign_in, :layout => :layout_login
+end
+  
+get '/sign-up' do
+	erb :sign_up, :layout => :layout_login
 end

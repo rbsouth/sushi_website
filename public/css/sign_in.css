@@ -1,0 +1,74 @@
+html { 
+  background: url(/images/sushi-wallpaper.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#big-logo{
+	position: fixed;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.black-text{
+	color: black;
+}
+#sign-in-background{
+	height: 310px;
+	width: 499px;
+	top: 0px;
+  left: 0px;
+	background: white;
+	position: fixed;
+	z-index: -1;
+	opacity: .7;
+	border-radius: 5px;
+}
+.sign-in-box{
+	height: auto;
+	width: 500px;
+	padding: 10px;
+	border: 1px solid white;
+	border-radius: 5px;
+	top: 40%;
+	left: 50%;
+	position: fixed;
+  transform: translate(-50%, 0);
+}
+#sign-in-button{
+	width: 100%;
+	background-color: salmon;
+	color: white;
+}
+@media all and (max-width: 499px){
+	#big-logo{
+		position: fixed;
+		top: 0%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 390px;
+		height: 250px;
+	}
+	.sign-in-box{
+		height: auto;
+		width: 390px;
+		padding: 10px;
+		border: 1px solid white;
+		top: 40%;
+		left: 50%;
+		position: fixed;
+	  transform: translate(-50%, 0);
+	}
+	#sign-in-background{
+		height: 310px;
+		width: 388px;
+		top: 0px;
+	  left: 0px;
+		background: white;
+		position: fixed;
+		z-index: -1;
+		opacity: .7;
+		border-radius: 5px;
+	}
+}
