@@ -35,3 +35,8 @@ end
 get '/sign-up' do
 	erb :sign_up, :layout => :layout_login
 end
+
+get '/profile/:id' do
+	@user = User.find(params[:id])
+	erb :profile
+end

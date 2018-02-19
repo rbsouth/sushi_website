@@ -13,3 +13,7 @@
 .hide {
 	display: none;
 }
+#profile-page-info{
+	height: 100%;
+	background: salmon;
+}
