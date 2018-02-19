@@ -19,20 +19,24 @@ html, body {
 	height: 310px;
 	width: 499px;
 	top: 0px;
-  left: 0px;
+  right: 125px;
 	background: white;
-	position: absolute;
-	z-index: -1;
+	position: fixed;
 	opacity: .7;
 	border-radius: 5px;
 }
+.z-5{
+	z-index: 5;
+}
 .sign-in-box{
+	margin-top: 50px;
+	background: white;
+	position: fixed;
 	height: auto;
 	width: 500px;
 	padding: 10px;
 	border: 1px solid white;
 	border-radius: 5px;
-	z-index: 5;
 	/*top: 40%;
 	left: 50%;*/
 	/*position: fixed;
