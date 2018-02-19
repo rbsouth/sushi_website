@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-3">
+		<div id="profile-page-info">
+			<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+
+			<p>Username: <%= @user.username %> </p>
+		</div>
+	</div>
+	<div class="col-7">
+		<h5>Posts</h5>
+		<div class="posts">
+			<% @user.posts.each do |post| %>
+					<div class="post">
+						<p>Added <%= post.created_at %> </p>
+						<p> <%= post.content %> </p>
+					</div>
+			<% end %>
+		</div>
+	</div>
+</div>
