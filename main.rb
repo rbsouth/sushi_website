@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require './models'
+require 'date'
 
 enable :sessions
 set :database, 'sqlite3:blog.sqlite3'
@@ -29,6 +30,7 @@ post '/new-user' do
 end
   
 get '/home' do
+	@posts = Post.order("created_at DESC").last(10)
 	erb :home
 end
   
@@ -40,3 +42,4 @@ get '/profile/:id' do
 	@user = User.find(params[:id])
 	erb :profile
 end
+
