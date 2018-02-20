@@ -1,0 +1,5 @@
+<div class="list-group d-block">
+	<% @users.each do |user| %>
+		<a href="/profile/<%= user.id %>" class="list-group-item list-group-item-action"><%= user.first_name + ' ' + user.last_name + '(' + user.username + ')'%></a>
+	<% end %>
+</div>

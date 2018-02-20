@@ -11,4 +11,13 @@ $(function (){
 		$('#newPostModal').modal('toggle');
 	});
 
+	$(document).on('keyup', '#search', function(){
+		let val = $(this).val();
+		if (val.length > 0 ) {
+			$.post('/search', {search: val}, function(html){
+				$('#results').html(html);
+			});
+		};
+	});
+
 });

@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './models'
 require 'date'
+require 'json'
 
 enable :sessions
 set :database, 'sqlite3:blog.sqlite3'
@@ -80,4 +81,9 @@ end
 post '/new-post' do
 	current_user.posts.create(created_at: Time.now, content: params[:post][:content], picture: params[:post][:picture])
 	redirect :home
+end
+
+post '/search' do
+	@users = User.where("first_name LIKE ? OR last_name LIKE ? OR username LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+	erb :search_users, layout: false
 end

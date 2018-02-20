@@ -27,6 +27,7 @@
 	top: 0px;
 	background: salmon;
 }
+<<<<<<< HEAD
 #profile-pic{
 	border-radius: 50%;
   position: relative;
@@ -46,4 +47,19 @@
   width: 310px;
   background: black;
   opacity: .5;
+=======
+
+#post-icon {
+	height: 40px;
+	width: auto;
+}
+
+/*#settins-icon {
+	height: 30px;
+	width: auto;
+}*/
+
+#results {
+	position: absolute;
+>>>>>>> master
 }

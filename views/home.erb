@@ -1,11 +1,7 @@
 <div class="posts">
   <% @posts.each do |post| %>
     <div class="card border-dark">
-      <% if post.picture == nil %>
-        <img class="card-img-top hide" src="<%= post.picture %>">
-      <% else %>
-        <img class="card-img-top" src="<%= post.picture %>" alt="Card image cap">
-      <% end %> 
+      <img class="card-img-top <%= 'hide' if post.picture.nil? %>" src="<%= post.picture %>">
       <div class="card-body">
         <p class="card-text"><%= post.content %></p>
         <a type="checkbox">Like</a>
@@ -14,30 +10,3 @@
     </div>
   <% end %>
 </div>
-
-<!-- <div class="card border-dark">
-  <img class="card-img-top" src="/images/flower-sushi.jpg" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">OMG! Look at this sushi flower! I'm dying!!!.</p>
-    <a type="checkbox">Like</a>
-    <footer class="blockquote-footer float-right"><cite title="Source Title">Source Title</cite></footer>
-  </div>
-</div>
-
-<div class="card border-dark">
-  <img class="card-img-top hide" src="/images/flower-sushi.jpg" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">New to town and looking for some Sushi! Seriously guys, it's been forever. And I mean good sushi, not your truck stop imitation. Help!</p>
-    <a type="checkbox">Like</a>
-    <footer class="blockquote-footer float-right"><cite title="Source Title">Source Title</cite></footer>
-  </div>
-</div>
-
-<div class="card border-dark">
-  <img class="card-img-top" src="/images/dragon-sushi.jpg" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Oriental Garden makes MF dragons out of their sushi! No joke, yo! Tastes even better than it looks.</p>
-    <a type="checkbox">Like</a>
-    <footer class="blockquote-footer float-right"><cite title="Source Title">Source Title</cite></footer>
-  </div>
-</div> -->
