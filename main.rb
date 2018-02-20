@@ -32,6 +32,11 @@ post '/sign-in' do
 	end
 end
 
+get '/sign-out' do
+	session[:user_id] = nil
+	redirect '/'
+end
+
 post '/new-user' do
 	@user = User.create(params[:user])
 	session[:user_id] = @user.id
