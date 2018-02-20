@@ -18,6 +18,10 @@
               <input type="text" name="user[username]" class="form-control" id="username" value= <%= @user.username %> >
             </div>
             <div class="form-group">
+					    <label for="bio">Bio</label>
+					    <textarea name="user[bio]" class="form-control" id="bio" rows="3" value= <%= @user.bio %> ></textarea>
+					  </div>
+            <div class="form-group">
               <label for="first_name">First Name</label>
               <input type="text" name="user[first_name]" class="form-control" id="first_name" value= <%= @user.first_name %> >
             </div>
