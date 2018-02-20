@@ -62,7 +62,8 @@ get '/destroy/:id' do
 end
   
 get '/home' do
-	@posts = Post.order("created_at DESC").last(10)
+	@user = current_user
+	@posts = Post.order("created_at").last(10).reverse
 	erb :home
 end
   
@@ -77,6 +78,5 @@ end
 
 post '/new-post' do
 	current_user.posts.create(created_at: Time.now, content: params[:post][:content], picture: params[:post][:picture])
-	#if picture field is empty, add .hide to picture div class 
 	redirect :home
 end
