@@ -33,3 +33,17 @@
   height: 200px;
   width: 200px;
 }
+#user-post-title{
+	border-bottom-style: dotted;
+	text-align: center;
+	margin-top: 15px;
+	padding-bottom: 15px;
+}
+#name-profile-background {
+	position: fixed;
+	left: 0px;
+	height: 50px;
+  width: 310px;
+  background: black;
+  opacity: .5;
+}

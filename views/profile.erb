@@ -84,9 +84,10 @@
 			<% else %>
 				<img id="profile-pic" src="/images/profile-filler.png" alt="">
 			<% end %>
-
+			<div id="name-profile-background">
+			</div>
 			<h1><%= @user.first_name %> <%= @user.last_name %></h1>
-			<p>Username: <%= @user.username %> </p>
+			<p>@<%= @user.username %> </p>
 			<p> <%= @user.bio %> </p>
 			<% if @user == current_user %>
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeInfoModal">
@@ -96,7 +97,7 @@
 		</div>
 	</div>
 	<div class="col-7">
-		<h5>Posts</h5>
+		<h2 id="user-post-title"> <%= @user.username %></h2>
 		<div class="posts">
   		<% @posts.each do |post| %>
 		    <div class="card border-dark">
