@@ -34,3 +34,7 @@
 	height: 30px;
 	width: auto;
 }*/
+
+#results {
+	position: absolute;
+}
