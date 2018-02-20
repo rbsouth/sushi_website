@@ -13,21 +13,24 @@
 .hide {
 	display: none;
 }
+.green-text{
+	color: green
+}
 #profile-page-info{
-  position: fixed;
+  position: sticky;
   text-align: center;
+  align-items: center;
   top: 75px;
-  left: 40px;
+  color: white;
 }
 #profile-background{
 	height: 100%;
-	width: 310px;
+	width: 295px;
 	position: fixed;
 	left: 0px;
 	top: 0px;
 	background: salmon;
 }
-<<<<<<< HEAD
 #profile-pic{
 	border-radius: 50%;
   position: relative;
@@ -35,23 +38,31 @@
   width: 200px;
 }
 #user-post-title{
-	border-bottom-style: dotted;
+	border-bottom: 5px dotted black;
 	text-align: center;
 	margin-top: 15px;
 	padding-bottom: 15px;
 }
 #name-profile-background {
-	position: fixed;
-	left: 0px;
-	height: 50px;
-  width: 310px;
-  background: black;
+  position: fixed;
+  left: 0px;
+  top: 277px;
+  height: 46px;
+  width: 295px;
+  background: #ffa89d;
   opacity: .5;
-=======
+}
 
 #post-icon {
 	height: 40px;
 	width: auto;
+}
+
+#settings-button{
+  position: fixed;
+  top: 70px;
+  left: 226px;
+  cursor: pointer;
 }
 
 /*#settins-icon {
@@ -60,6 +71,5 @@
 }*/
 
 #results {
-	position: absolute;
->>>>>>> master
+	position: absolute
 }
