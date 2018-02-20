@@ -14,6 +14,13 @@
 	display: none;
 }
 #profile-page-info{
+	
+}
+#profile-background{
 	height: 100%;
+	width: 310px;
+	position: fixed;
+	left: 0px;
+	top: 0px;
 	background: salmon;
 }
