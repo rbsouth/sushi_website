@@ -80,3 +80,7 @@ post '/new-post' do
 	current_user.posts.create(created_at: Time.now, content: params[:post][:content], picture: params[:post][:picture])
 	redirect :home
 end
+
+post '/search' do
+	
+end

@@ -13,7 +13,7 @@
 
     <nav class="navbar sticky-top navbar-dark bg-dark">
       <div class="navbar-nav">
-        <form class="form-inline">
+        <form class="form-inline" method="POST" action="/search">
           <a class="navbar-brand nav-inline" href="/home">
             <img src="/images/sushi-home.png" class="d-inline" alt="Home">
           </a>
@@ -27,7 +27,9 @@
         <% else %>
           <a class="nav-item nav-link" href="/">Sign In</a>
         <% end %>
-        <a class="nav-item nav-link text-white" data-toggle="modal" data-target="#changeInfoModal">Icon</a>
+        <a class="nav-item nav-link" data-toggle="modal" data-target="#changeInfoModal">
+          <img id="settins-icon" src="/images/white-settings-32.png">
+        </a>
       </div>
     </nav>
 
@@ -37,11 +39,14 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-body">
-            <div class="form-group">
-              <label for="postPictureInput">Paste your pictures URL!</label>
-              <input class="form-control" id="postPictureInput" placeholder="Picture URL" name="post[picture]">
-            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             <form class="form-group" method="POST" action="/new-post">
+              <div class="form-group">
+                <label for="postPictureInput">Paste your pictures URL!</label>
+                <input class="form-control" id="postPictureInput" placeholder="Picture URL" name="post[picture]">
+              </div>
               <label for="postTextArea">Let's talk Sushi</label>
               <textarea class="form-control" rows="5" id="postTextArea" maxlength="150" placeholder="Say something!" name="post[content]"></textarea>
               <span id="chars">150</span> characters remaining
@@ -53,7 +58,9 @@
     </div>
 
     <nav class="navbar fixed-bottom navbar-dark bg-dark justify-content-center">
-      <a id="newPostBtn" class="nav-link" href="#">Link</a>
+      <a id="newPostBtn" class="nav-link">
+        <img id="post-icon" src="/images/post-sushi.png">
+      </a>
     </nav>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
