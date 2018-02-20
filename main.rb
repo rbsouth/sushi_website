@@ -33,15 +33,12 @@ post '/sign-in' do
 end
 
 post '/new-user' do
-	puts "------------PARAMS--------------"
-	p params
 	@user = User.create(params[:user])
+	session[:user_id] = @user.id
 	redirect "/profile/#{@user.id}"
 end
 
 post '/update-info' do
-	puts "--------THE PARAMS---------"
-	p params
 	updates = {}
 	params[:user].each do |col,val|
 		if !val.blank?
