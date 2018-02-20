@@ -52,6 +52,12 @@ post '/update-info' do
 	@user.update_attributes(updates)
 	redirect "/profile/#{@user.id}"
 end
+
+get '/destroy/:id' do
+	@user = User.find(params[:id])
+	@user.destroy
+	redirect '/'
+end
   
 get '/home' do
 	@posts = Post.order("created_at DESC").last(10)
