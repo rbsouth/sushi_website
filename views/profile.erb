@@ -18,6 +18,10 @@
               <input type="text" name="user[username]" class="form-control" id="username" value= <%= @user.username %> >
             </div>
             <div class="form-group">
+              <label for="picture">Profile Picture URL</label>
+              <input type="text" name="user[picture]" class="form-control" id="picture" value= <%= @user.picture %> >
+            </div>
+            <div class="form-group">
 					    <label for="bio">Bio</label>
 					    <textarea name="user[bio]" class="form-control" id="bio" rows="3" value= <%= @user.bio %> ></textarea>
 					  </div>
@@ -68,30 +72,44 @@
   </div>
 </div>
 
+<!-- END MODALS -->
+
 <div id="profile-background"></div>
 <div class="row">
 	<div class="col-3">
+		<div id="name-profile-background"></div>
 		<div id="profile-page-info">
-			<img src=" <%= @user.picture %> " alt="">
-			<h1><%= @user.first_name %> <%= @user.last_name %></h1>
-			<p>Username: <%= @user.username %> </p>
-			<p> <%= @user.bio %> </p>
-			<% if @user == current_user %>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeInfoModal">
-				  Edit Info
-				</button>
+
+			<% if @user.picture != nil %>
+				<img id="profile-pic" src=" <%= @user.picture %> " alt="">
+			<% else %>
+				<img id="profile-pic" src="/images/profile-filler.png" alt="">
 			<% end %>
+			<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+			<p>@<%= @user.username %> </p>
+			<p> <%= @user.bio %> </p>
 		</div>
+			<% if @user == current_user %>
+				<a id="settings-button" class="nav-item nav-link" data-toggle="modal" data-target="#changeInfoModal">
+          <img id="settins-icon" src="/images/white-settings-32.png">
+        </a>
+			<% end %>
 	</div>
 	<div class="col-7">
-		<h5>Posts</h5>
+		<h2 id="user-post-title"> <%= @user.username %></h2>
 		<div class="posts">
-			<% @user.posts.each do |post| %>
-					<div class="post">
-						<p>Added <%= post.created_at %> </p>
-						<p> <%= post.content %> </p>
-					</div>
-			<% end %>
+  		<% @posts.each do |post| %>
+		    <div class="card border-dark">
+		      <% if post.picture != nil %>
+		        <img class="card-img-top" src="<%= post.picture %>" alt="Card image cap">
+		      <% end %> 
+		      <div class="card-body">
+		        <p class="card-text"><%= post.content %></p>
+		        <a type="checkbox">Like</a>
+		        <footer class="blockquote-footer float-right"><cite title="Source Title"><%= post.user.username %></cite></footer>
+		      </div>
+		    </div>
+		  <% end %>
 		</div>
 	</div>
 </div>

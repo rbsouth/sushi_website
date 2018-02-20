@@ -74,6 +74,7 @@ end
 
 get '/profile/:id' do
 	@user = User.find(params[:id])
+	@posts = @user.posts.order("created_at").last(10).reverse
 	erb :profile
 end
 
