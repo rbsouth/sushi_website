@@ -1,9 +1,86 @@
+<div class="modal fade" id="changeInfoModal" tabindex="-1" role="dialog" aria-labelledby="changeInfoModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    	<div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Edit Info</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+			<div class="modal-body">
+         <form method="POST" action="/update-info">
+            <div class="form-group ahead-of-background">
+              <label  for="email">Email address</label>
+              <input type="email" name="user[email]" class="form-control" id="email" aria-describedby="emailHelp" value= <%= @user.email %> >
+            </div>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" name="user[username]" class="form-control" id="username" value= <%= @user.username %> >
+            </div>
+            <div class="form-group">
+					    <label for="bio">Bio</label>
+					    <textarea name="user[bio]" class="form-control" id="bio" rows="3" value= <%= @user.bio %> ></textarea>
+					  </div>
+            <div class="form-group">
+              <label for="first_name">First Name</label>
+              <input type="text" name="user[first_name]" class="form-control" id="first_name" value= <%= @user.first_name %> >
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last Name</label>
+              <input type="text" name="user[last_name]" class="form-control" id="last_name" value= <%= @user.last_name %> >
+            </div>
+            <div class="form-group">
+              <label  for="password">Password</label>
+              <input type="password" name="user[password]" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label  for="phone">Phone Number</label>
+              <input type="text" name="user[phone]" class="form-control" id="phone" value= <%= @user.phone %> >
+            </div>
+            <button id="sign-in-button" type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#areYouSure">
+						  Delete Account
+						</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </form>
+      </div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="areYouSure" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete your account?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Wait a second...</button>
+        <a class="btn btn-danger" href="/destroy/<%= @user.id %>" role="button">Yes, I'm sure</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="profile-background"></div>
 <div class="row">
 	<div class="col-3">
 		<div id="profile-page-info">
+			<img src=" <%= @user.picture %> " alt="">
 			<h1><%= @user.first_name %> <%= @user.last_name %></h1>
-
 			<p>Username: <%= @user.username %> </p>
+			<p> <%= @user.bio %> </p>
+			<% if @user == current_user %>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeInfoModal">
+				  Edit Info
+				</button>
+			<% end %>
 		</div>
 	</div>
 	<div class="col-7">
