@@ -1,8 +1,13 @@
 <div class="modal fade" id="changeInfoModal" tabindex="-1" role="dialog" aria-labelledby="changeInfoModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+    	<div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Edit Info</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 			<div class="modal-body">
-				<h3>Edit Info</h3>
          <form method="POST" action="/update-info">
             <div class="form-group ahead-of-background">
               <label  for="email">Email address</label>
@@ -29,10 +34,34 @@
               <input type="text" name="user[phone]" class="form-control" id="phone" value= <%= @user.phone %> >
             </div>
             <button id="sign-in-button" type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#areYouSure">
+						  Delete Account
+						</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </form>
       </div>
 		</div>
 	</div>
+</div>
+
+<div class="modal fade" id="areYouSure" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete your account?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Wait a second...</button>
+        <a class="btn btn-danger" href="/destroy/<%= @user.id %>" role="button">Yes, I'm sure</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="row">
