@@ -1,7 +1,7 @@
 <div class="posts">
   <% @posts.each do |post| %>
     <div class="card border-dark">
-      <img class="card-img-top" src="/images/flower-sushi.jpg" alt="Card image cap">
+      <img class="card-img-top" src="<%= post.picture %>" alt="Card image cap">
       <div class="card-body">
         <p class="card-text"><%= post.content %></p>
         <a type="checkbox">Like</a>
