@@ -14,7 +14,10 @@
 	display: none;
 }
 #profile-page-info{
-	
+  position: fixed;
+  text-align: center;
+  top: 75px;
+  left: 40px;
 }
 #profile-background{
 	height: 100%;
@@ -23,4 +26,10 @@
 	left: 0px;
 	top: 0px;
 	background: salmon;
+}
+#profile-pic{
+	border-radius: 50%;
+  position: relative;
+  height: 200px;
+  width: 200px;
 }
