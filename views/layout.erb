@@ -25,13 +25,18 @@
       </div>
       <div class="form-inline justify-content-end">
         <% if user_signed_in? %>
-          <a class="nav-item nav-link" href="/profile/<%= current_user.id %>"><%= current_user.username %></a>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle white-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= current_user.username %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/profile/<%= current_user.id %>">Profile</a>
+              <a class="dropdown-item" href="/sign-out">Sign Out</a>
+            </div>
+          </div>
         <% else %>
           <a class="nav-item nav-link" href="/">Sign In</a>
         <% end %>
-        <a class="nav-item nav-link" data-toggle="modal" data-target="#changeInfoModal">
-          <img id="settins-icon" src="/images/white-settings-32.png">
-        </a>
       </div>
     </nav>
 

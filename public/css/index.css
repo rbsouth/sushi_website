@@ -13,8 +13,8 @@
 .hide {
 	display: none;
 }
-.green-text{
-	color: green
+.white-text{
+	color: white;
 }
 #profile-page-info{
   position: sticky;
@@ -63,6 +63,9 @@
   top: 70px;
   left: 226px;
   cursor: pointer;
+}
+.dropdown-menu{
+  min-width: 112px;
 }
 
 /*#settins-icon {
